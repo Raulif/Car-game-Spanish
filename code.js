@@ -25,6 +25,7 @@ $(document).ready(function(){
     }
     else {
       document.getElementById("outputBox").value="Necesitas COMBUSTIBLE para arrancar el coche!";
+      $("#fuel-label").addClass("focus-fuel");
     }
   });
 
@@ -60,6 +61,7 @@ $(document).ready(function(){
   //ADD FUEL button:
   $("#addFuel-btn").click(function(){
     if (fuel < 3){
+      $("#fuel-label").removeClass("focus-fuel");
       fuel++;
       document.getElementById("outputBox").value="El nivel de combustible es " + fuel;
       animateFuel();
